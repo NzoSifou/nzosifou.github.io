@@ -1,4 +1,4 @@
-name: Build and distribute
+name: Deploy Flutter Web to GitHub Pages
 
 on:
   push:
@@ -6,19 +6,31 @@ on:
       - main
 
 jobs:
-  build:
-    name: build
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: cedvdb/action-flutter-build-web@v1
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          build-cmd: flutter build web --release
-          working-directory: ./
+          flutter-version: '3.29.1'
+          channel: stable
 
-      - name: Archive Production artifact
-        uses: actions/upload-artifact@v4
+      - name: Enable web support
+        run: flutter config --enable-web
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Flutter Web
+        run: flutter build web --release
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: release
-          path: build/web
+          branch: gh-pages  # Branche où sera déployé le site
+          folder: build/web  # Dossier à publier
+          clean: true  # Supprime les anciens fichiers avant de déployer
