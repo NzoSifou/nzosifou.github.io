@@ -59,6 +59,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/minecraft/oak_log.png
+    - assets/minecraft/oak_leaves.png
+    - assets/minecraft/dirt_block.png
+    - assets/minecraft/grass_block.png
+    - assets/minecraft/sky.png
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
