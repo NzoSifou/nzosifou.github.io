@@ -80,38 +80,54 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
             destinations: [
               NavigationRailDestination(
                 icon: Image.asset(
-                  'assets/minecraft/enchantment_table.png',
+                  'assets/minecraft/head.png',
                   width: 24,
                   height: 24,
                 ),
                 selectedIcon: Image.asset(
-                  'assets/minecraft/enchantment_table.png',
+                  'assets/minecraft/head.png',
                   width: 24,
                   height: 24,
                 ),
                 label: Text(t.about_me),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.work),
-                selectedIcon: Icon(Icons.work),
+                icon: Image.asset(
+                  'assets/minecraft/redstone.png',
+                  width: 24,
+                  height: 24,
+                ),
+                selectedIcon: Image.asset(
+                  'assets/minecraft/redstone.png',
+                  width: 24,
+                  height: 24,
+                ),
                 label: Text(t.my_projets),
               ),
               NavigationRailDestination(
                 icon: Image.asset(
                   'assets/minecraft/enchantment_table.png',
-                  width: 32,
-                  height: 32,
+                  width: 24,
+                  height: 24,
                 ),
                 selectedIcon: Image.asset(
                   'assets/minecraft/enchantment_table.png',
-                  width: 32,
-                  height: 32,
+                  width: 24,
+                  height: 24,
                 ),
                 label: Text(t.my_skills),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.article),
-                selectedIcon: Icon(Icons.article),
+                icon: Image.asset(
+                  'assets/minecraft/book.png',
+                  width: 24,
+                  height: 24,
+                ),
+                selectedIcon: Image.asset(
+                  'assets/minecraft/book.png',
+                  width: 24,
+                  height: 24,
+                ),
                 label: Text(t.my_cv),
               ),
             ],
