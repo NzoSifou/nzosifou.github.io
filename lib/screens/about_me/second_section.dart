@@ -13,12 +13,12 @@ class SecondSection extends StatelessWidget {
         final containerWidth = constraints.maxWidth;
         final containerHeight = constraints.maxHeight;
 
-        int horizontalCount = (containerWidth / baseSize).floor();
-        int verticalCount = (containerHeight / baseSize).floor();
+        final horizontalCount = (containerWidth / baseSize).floor();
+        final verticalCount = (containerHeight / baseSize).floor();
 
         final rand = Random();
 
-        List<String> topHalf = _generateBlockList(
+        final topHalf = _generateBlockList(
           weights: {
             'assets/minecraft/stone.png': 60,
             'assets/minecraft/coal_ore.png': 15,
@@ -28,7 +28,7 @@ class SecondSection extends StatelessWidget {
           },
         );
 
-        List<String> bottomHalf = _generateBlockList(
+        final bottomHalf = _generateBlockList(
           weights: {
             'assets/minecraft/stone.png': 50,
             'assets/minecraft/coal_ore.png': 5,
@@ -42,7 +42,7 @@ class SecondSection extends StatelessWidget {
           },
         );
 
-        List<List<String>> grid = List.generate(
+        final grid = List.generate(
           verticalCount,
               (row) => List.generate(
             horizontalCount,
@@ -58,9 +58,6 @@ class SecondSection extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: horizontalCount,
-            childAspectRatio: 1,
-            mainAxisSpacing: 0,
-            crossAxisSpacing: 0,
           ),
           itemCount: verticalCount * horizontalCount,
           itemBuilder: (context, index) {
@@ -75,7 +72,7 @@ class SecondSection extends StatelessWidget {
   }
 
   List<String> _generateBlockList({required Map<String, int> weights}) {
-    List<String> list = [];
+    final list = <String>[];
     weights.forEach((key, weight) {
       list.addAll(List.generate(weight, (_) => key));
     });

@@ -80,7 +80,7 @@ class AboutMeScreenState extends State<AboutMeScreen> {
   Widget _buildFrameForPage(int page) {
     final messages = [
       "👨‍🎓 Je m'appelle Enzo Monchanin et je suis un étudiant en 3ème année de BUT Informatique à l'IUT Lyon 1 (site de Bourg-en-Bresse).",
-      "📱 Je suis passionné par le développement mobile, avec des préférences pour le Flutter en front-end :D",
+      '📱 Je suis passionné par le développement mobile, avec des préférences pour le Flutter en front-end :D',
       "🛠️ Je fais aussi énormément d'autres langages, consultez ma page \"Mes compétences\" pour en savoir plus !",
       "🧠 Je m'adapte très rapidement et facilement aux langages que je découvre grâce à ma curiosité.",
       "✨ J'adore ajouter des détails à mes projets, c'est selon moi ce qui lui donne de la vie, la minutie est très importante à mes yeux.",
@@ -195,7 +195,7 @@ class AboutMeScreenState extends State<AboutMeScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              "Électronique",
+                              'Électronique',
                               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -221,13 +221,13 @@ class AboutMeScreenState extends State<AboutMeScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              "Musique",
+                              'Musique',
                               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
-                              "La musique est un élément nécessaire qui représente le mieux la liberté selon moi.",
+                              'La musique est un élément nécessaire qui représente le mieux la liberté selon moi.',
                               style: Theme.of(context).textTheme.titleSmall,
                               softWrap: true,
                             ),
@@ -247,7 +247,7 @@ class AboutMeScreenState extends State<AboutMeScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              "Photographie",
+                              'Photographie',
                               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -269,7 +269,7 @@ class AboutMeScreenState extends State<AboutMeScreen> {
                   children: [
                     const Flexible(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        padding: EdgeInsets.symmetric(horizontal: 32),
                         child: Column(),
                       ),
                     ),
@@ -285,13 +285,13 @@ class AboutMeScreenState extends State<AboutMeScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              "Café",
+                              'Café',
                               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
-                              "Que ce soit pour la digestion ou pour la fatigue, le café après le repas est un incontournable.",
+                              'Que ce soit pour la digestion ou pour la fatigue, le café après le repas est un incontournable.',
                               style: Theme.of(context).textTheme.titleSmall,
                               softWrap: true,
                             ),
@@ -301,7 +301,7 @@ class AboutMeScreenState extends State<AboutMeScreen> {
                     ),
                     const Flexible(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 32),
+                        padding: EdgeInsets.symmetric(horizontal: 32),
                         child: Column(),
                       ),
                     ),
@@ -329,7 +329,7 @@ class AboutMeScreenState extends State<AboutMeScreen> {
                       horizontal: 24,
                     ),
                     child: Text(
-                      "Passé composé, futur en marche",
+                      'Passé composé, futur en marche',
                       style: Theme.of(
                         context,
                       ).textTheme.displaySmall?.copyWith(
@@ -341,35 +341,35 @@ class AboutMeScreenState extends State<AboutMeScreen> {
                 ),
                 const SizedBox(height: 32),
                 const TimelineStep(
-                  title: "Les débuts sur Paint 🎨",
+                  title: 'Les débuts sur Paint 🎨',
                   subtitle: "Étant petit, je dessinais sur l'ordinateur familial, fasciné par ce nouveau monde qui s'offrait à moi.",
                   icon: Icons.brush,
                 ),
                 const TimelineStep(
-                  title: "Le déclic du collège 💡",
+                  title: 'Le déclic du collège 💡',
                   subtitle: "À cette période, j'ai vu les entrailles d'un site web et je me suis demandé comment cela fonctionnait ?",
                   icon: Icons.lightbulb,
                   isLeft: false,
                 ),
                 const TimelineStep(
-                  title: "Mon premier site 🌐",
-                  subtitle: "J’ai donc commencé à créer mon premier site perso à la fin du collège, pour expérimenter.",
+                  title: 'Mon premier site 🌐',
+                  subtitle: 'J’ai donc commencé à créer mon premier site perso à la fin du collège, pour expérimenter.',
                   icon: Icons.web,
                 ),
                 const TimelineStep(
-                  title: "Bac STI2D SIN ⚙️",
+                  title: 'Bac STI2D SIN ⚙️',
                   subtitle: "J’ai fini par orienté mes études vers l’électronique et l'informatique, c'est là où j'ai su ce que je voulais faire.",
                   icon: Icons.school,
                   isLeft: false,
                 ),
                 const TimelineStep(
-                  title: "BUT Informatique (voir + ?) 💻",
+                  title: 'BUT Informatique (voir + ?) 💻',
                   subtitle: "Aujourd’hui je continue mes études dans cette voie, j'ai compris que j'étais voué à celle-ci.",
                   icon: Icons.computer,
                 ),
                 const TimelineStep(
-                  title: "Mon futur profesionnel 🚀",
-                  subtitle: "Créer des apps mobiles qui communiquent avec le monde réel, Flutter & Arduino, là est ma passion.",
+                  title: 'Mon futur profesionnel 🚀',
+                  subtitle: 'Créer des apps mobiles qui communiquent avec le monde réel, Flutter & Arduino, là est ma passion.',
                   icon: Icons.mobile_friendly,
                   isLeft: false,
                 ),

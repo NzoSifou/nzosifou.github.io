@@ -3,11 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ProjectsScreen extends StatefulWidget {
+  const ProjectsScreen({super.key});
+
   @override
-  _ProjectsScreenState createState() => _ProjectsScreenState();
+  ProjectsScreenState createState() => ProjectsScreenState();
 }
 
-class _ProjectsScreenState extends State<ProjectsScreen> {
+class ProjectsScreenState extends State<ProjectsScreen> {
   final CarouselController controller = CarouselController(initialItem: 1);
 
   @override
@@ -18,7 +20,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.sizeOf(context).height;
+    final height = MediaQuery.sizeOf(context).height;
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: height / 2),
       child: CarouselView.weighted(
@@ -35,13 +37,13 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
 }
 
 class HeroLayoutCard extends StatelessWidget {
-  const HeroLayoutCard({super.key, required this.imageInfo});
+  const HeroLayoutCard({required this.imageInfo, super.key});
 
   final ImageInfo imageInfo;
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.sizeOf(context).width;
+    final width = MediaQuery.sizeOf(context).width;
     return Stack(
       alignment: AlignmentDirectional.bottomStart,
       children: <Widget>[
@@ -58,7 +60,7 @@ class HeroLayoutCard extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: const EdgeInsets.all(18),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,

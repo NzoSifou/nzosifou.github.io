@@ -13,12 +13,12 @@ class ThirdSection extends StatelessWidget {
         final containerWidth = constraints.maxWidth;
         final containerHeight = constraints.maxHeight;
 
-        int horizontalCount = (containerWidth / baseSize).floor();
-        int verticalCount = (containerHeight / baseSize).floor();
+        final horizontalCount = (containerWidth / baseSize).floor();
+        final verticalCount = (containerHeight / baseSize).floor();
 
         final rand = Random();
 
-        List<String> normalBlocks = _generateBlockList(
+        final normalBlocks = _generateBlockList(
           weights: {
             'assets/minecraft/deepslate.png': 64,
             'assets/minecraft/deepslate_iron_ore.png': 8,
@@ -30,7 +30,7 @@ class ThirdSection extends StatelessWidget {
           },
         );
 
-        List<List<String>> grid = List.generate(verticalCount, (row) {
+        final grid = List.generate(verticalCount, (row) {
           if (row == verticalCount - 1) {
             // Last row = full bedrock
             return List.generate(
@@ -57,9 +57,6 @@ class ThirdSection extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: horizontalCount,
-            childAspectRatio: 1,
-            mainAxisSpacing: 0,
-            crossAxisSpacing: 0,
           ),
           itemCount: verticalCount * horizontalCount,
           itemBuilder: (context, index) {
@@ -74,7 +71,7 @@ class ThirdSection extends StatelessWidget {
   }
 
   List<String> _generateBlockList({required Map<String, int> weights}) {
-    List<String> list = [];
+    final list = <String>[];
     weights.forEach((key, weight) {
       list.addAll(List.generate(weight, (_) => key));
     });

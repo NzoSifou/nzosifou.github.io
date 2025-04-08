@@ -35,25 +35,26 @@ class Portfolio extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      themeMode: ThemeMode.system,
-      home: PortfolioScreen(),
+      home: const PortfolioScreen(),
       scrollBehavior: WebScrollBehavior(),
     );
   }
 }
 
 class PortfolioScreen extends StatefulWidget {
+  const PortfolioScreen({super.key});
+
   @override
-  _PortfolioScreenState createState() => _PortfolioScreenState();
+  PortfolioScreenState createState() => PortfolioScreenState();
 }
 
-class _PortfolioScreenState extends State<PortfolioScreen> {
+class PortfolioScreenState extends State<PortfolioScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    AboutMeScreen(),
-    ProjectsScreen(),
-    SkillsScreen(),
+    const AboutMeScreen(),
+    const ProjectsScreen(),
+    const SkillsScreen(),
   ];
 
   @override
@@ -65,10 +66,10 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
             selectedIndex: _selectedIndex,
             onDestinationSelected: (int index) async {
               if (index == 3) {
-                final url = "assets/CV_Enzo_MONCHANIN.pdf";
+                const url = 'assets/CV_Enzo_MONCHANIN.pdf';
                 final uri = Uri.parse(url);
                 if (!await launchUrl(uri)) {
-                  throw 'Impossible de lancer $uri';
+                  throw Exception('Impossible de lancer $uri');
                 }
               } else {
                 setState(() {

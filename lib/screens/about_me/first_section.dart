@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -16,10 +15,10 @@ class FirstSection extends StatelessWidget {
         final containerWidth = constraints.maxWidth;
         final containerHeight = constraints.maxHeight;
 
-        int horizontalCount = (containerWidth / baseSize).floor();
+        var horizontalCount = (containerWidth / baseSize).floor();
         if (horizontalCount == 0) horizontalCount = 1;
 
-        int verticalCount = (containerHeight / baseSize).floor();
+        var verticalCount = (containerHeight / baseSize).floor();
         if (verticalCount == 0) verticalCount = 1;
 
         final imageSize = min(
@@ -28,7 +27,7 @@ class FirstSection extends StatelessWidget {
         );
 
         // Init grid
-        List<List<String>> grid = List.generate(
+        final grid = List<List<String>>.generate(
           verticalCount,
               (_) => List.generate(
             horizontalCount,
@@ -40,8 +39,8 @@ class FirstSection extends StatelessWidget {
         final image2Row = verticalCount - 3;
 
         // Apply image2 and image3 rows
-        for (int row = image2Row; row < verticalCount; row++) {
-          for (int col = 0; col < horizontalCount; col++) {
+        for (var row = image2Row; row < verticalCount; row++) {
+          for (var col = 0; col < horizontalCount; col++) {
             grid[row][col] =
             row == image2Row
                 ? 'assets/minecraft/grass_block.png'
@@ -60,7 +59,7 @@ class FirstSection extends StatelessWidget {
           ['1', '1', '5', '1', '1'],
         ];
 
-        Map<String, String> imageMap = {
+        final imageMap = <String, String>{
           '1': 'assets/minecraft/sky.png',
           '2': 'assets/minecraft/grass_block.png',
           '3': 'assets/minecraft/dirt_block.png',
@@ -70,26 +69,29 @@ class FirstSection extends StatelessWidget {
 
         // Function to check if pattern can be placed
         bool canPlace(int startRow, int startCol, List<List<bool>> used) {
-          for (int r = -1; r <= 7; r++) {
-            for (int c = -1; c <= 5; c++) {
-              int checkRow = startRow + r;
-              int checkCol = startCol + c;
+          for (var r = -1; r <= 7; r++) {
+            for (var c = -1; c <= 5; c++) {
+              final checkRow = startRow + r;
+              final checkCol = startCol + c;
               if (checkRow < 0 ||
                   checkCol < 0 ||
                   checkRow >= verticalCount ||
-                  checkCol >= horizontalCount)
+                  checkCol >= horizontalCount) {
                 continue;
+              }
               if (r >= 0 &&
                   r < 7 &&
                   c >= 0 &&
                   c < 5 &&
-                  used[checkRow][checkCol])
+                  used[checkRow][checkCol]) {
                 return false;
+              }
               if (r == -1 || r == 7 || c == -1 || c == 5) {
                 if (checkRow < verticalCount &&
                     checkCol < horizontalCount &&
-                    used[checkRow][checkCol])
+                    used[checkRow][checkCol]) {
                   return false;
+                }
               }
             }
           }
@@ -102,10 +104,10 @@ class FirstSection extends StatelessWidget {
             int startCol,
             List<List<bool>> used,
             ) {
-          for (int r = 0; r < 7; r++) {
-            for (int c = 0; c < 5; c++) {
-              int row = startRow + r;
-              int col = startCol + c;
+          for (var r = 0; r < 7; r++) {
+            for (var c = 0; c < 5; c++) {
+              final row = startRow + r;
+              final col = startCol + c;
               if (row < verticalCount && col < horizontalCount) {
                 grid[row][col] = imageMap[pattern[r][c]]!;
                 used[row][col] = true;
@@ -115,16 +117,16 @@ class FirstSection extends StatelessWidget {
         }
 
         // Try to place patterns randomly
-        List<List<bool>> used = List.generate(
+        final used = List.generate(
           verticalCount,
               (_) => List.generate(horizontalCount, (_) => false),
         );
 
-        List<Point<int>> allValidPositions = [];
+        final allValidPositions = <Point<int>>[];
 
-        int fixedPatternStartRow = verticalCount - 5 - 5;
+        final fixedPatternStartRow = verticalCount - 5 - 5;
         if (fixedPatternStartRow >= 0) {
-          for (int col = 0; col <= horizontalCount - 5; col++) {
+          for (var col = 0; col <= horizontalCount - 5; col++) {
             if (canPlace(fixedPatternStartRow, col, used)) {
               allValidPositions.add(Point(fixedPatternStartRow, col));
             }
@@ -134,10 +136,10 @@ class FirstSection extends StatelessWidget {
         final rand = Random();
         allValidPositions.shuffle(rand);
 
-        int maxPatterns = allValidPositions.length;
-        int numToPlace = rand.nextInt(maxPatterns) + 1; // At least 1
+        final maxPatterns = allValidPositions.length;
+        final numToPlace = rand.nextInt(maxPatterns) + 1; // At least 1
 
-        for (int i = 0; i < numToPlace; i++) {
+        for (var i = 0; i < numToPlace; i++) {
           final pos = allValidPositions[i];
           if (canPlace(pos.x, pos.y, used)) {
             placePattern(pos.x, pos.y, used);
@@ -149,9 +151,6 @@ class FirstSection extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: horizontalCount,
-            mainAxisSpacing: 0,
-            crossAxisSpacing: 0,
-            childAspectRatio: 1,
           ),
           itemCount: verticalCount * horizontalCount,
           itemBuilder: (context, index) {
