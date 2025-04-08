@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/i18n/generated/translations.g.dart';
 import 'package:portfolio/screens/about_me.dart';
 import 'package:portfolio/screens/projects.dart';
@@ -9,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   LocaleSettings.useDeviceLocale();
-  runApp(TranslationProvider(child: Portfolio()));
+  runApp(TranslationProvider(child: const Portfolio()));
 }
 
 class Portfolio extends StatelessWidget {
@@ -24,9 +25,11 @@ class Portfolio extends StatelessWidget {
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       title: 'Portfolio',
       theme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme(),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
       darkTheme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme(),
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.green,
           brightness: Brightness.dark,
@@ -61,10 +64,10 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
           NavigationRail(
             selectedIndex: _selectedIndex,
             onDestinationSelected: (int index) async {
-              if(index == 3) {
+              if (index == 3) {
                 final url = "assets/CV_Enzo_MONCHANIN.pdf";
                 final uri = Uri.parse(url);
-                if(!await launchUrl(uri)) {
+                if (!await launchUrl(uri)) {
                   throw 'Impossible de lancer $uri';
                 }
               } else {
@@ -76,8 +79,16 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
             labelType: NavigationRailLabelType.all,
             destinations: [
               NavigationRailDestination(
-                icon: Icon(Icons.person),
-                selectedIcon: Icon(Icons.person),
+                icon: Image.asset(
+                  'assets/minecraft/enchantment_table.png',
+                  width: 24,
+                  height: 24,
+                ),
+                selectedIcon: Image.asset(
+                  'assets/minecraft/enchantment_table.png',
+                  width: 24,
+                  height: 24,
+                ),
                 label: Text(t.about_me),
               ),
               NavigationRailDestination(
@@ -86,8 +97,16 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                 label: Text(t.my_projets),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.code),
-                selectedIcon: Icon(Icons.code),
+                icon: Image.asset(
+                  'assets/minecraft/enchantment_table.png',
+                  width: 32,
+                  height: 32,
+                ),
+                selectedIcon: Image.asset(
+                  'assets/minecraft/enchantment_table.png',
+                  width: 32,
+                  height: 32,
+                ),
                 label: Text(t.my_skills),
               ),
               NavigationRailDestination(
@@ -97,9 +116,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
               ),
             ],
           ),
-          Expanded(
-            child: _pages[_selectedIndex],
-          ),
+          Expanded(child: _pages[_selectedIndex]),
         ],
       ),
     );
