@@ -2,35 +2,35 @@
 a[b][c]=a[b][c]||[]
 a[b][c].push({p:"main.dart.js_1",e:"beginPart"})})(self,"$__dart_deferred_initializers__","eventLog")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var B,C,A={
-ao7(d,e,f){var y=new B.pp(C.k4),x=new A.KA(y)
-y.r=A.aBJ(x)
+aqk(d,e,f){var y=new B.pM(C.kv),x=new A.Ll(y)
+y.r=A.aDS(x)
 return x},
-aBH(d,e){switch(e){case"about_me":return"About me"
+aDR(d,e){switch(e){case"about_me":return"About me"
 case"my_projets":return"My projects"
 case"my_skills":return"My skills"
 case"my_cv":return"My CV"
 default:return null}},
-aBJ(d){return new A.aeT(d)},
-KA:function KA(d){this.a=d},
-aeT:function aeT(d){this.a=d}}
+aDS(d){return new A.agW(d)},
+Ll:function Ll(d){this.a=d},
+agW:function agW(d){this.a=d}}
 B=c[0]
 C=c[2]
 A=a.updateHolder(c[3],A)
-A.KA.prototype={
-j(d,e){return this.a.Cd(e)},
-gIU(){return"About me"},
-gLT(){return"My projects"},
-gLU(){return"My skills"},
-gLS(){return"My CV"},
-$iew:1,
-$if8:1,
-guX(){return this.a}}
+A.Ll.prototype={
+k(d,e){return this.a.CM(e)},
+gJx(){return"About me"},
+gMv(){return"My projects"},
+gMw(){return"My skills"},
+gMu(){return"My CV"},
+$ieB:1,
+$ifc:1,
+gvu(){return this.a}}
 var z=a.updateTypes([])
-A.aeT.prototype={
-$1(d){return A.aBH(this.a,d)},
+A.agW.prototype={
+$1(d){return A.aDR(this.a,d)},
 $S:44};(function inheritance(){var y=a.inherit
-y(A.KA,B.B)
-y(A.aeT,B.ix)})()
-B.aoW(b.typeUniverse,JSON.parse('{"KA":{"ew":[],"f8":["ec","ew"]}}'))};
+y(A.Ll,B.D)
+y(A.agW,B.iJ)})()
+B.ar9(b.typeUniverse,JSON.parse('{"Ll":{"eB":[],"fc":["em","eB"]}}'))};
 ((a,b)=>{a[b]=a.current
-a.eventLog.push({p:"main.dart.js_1",e:"endPart",h:b})})($__dart_deferred_initializers__,"dC/HqleOahFi2UNljmqMaxN2IhI=");
+a.eventLog.push({p:"main.dart.js_1",e:"endPart",h:b})})($__dart_deferred_initializers__,"jbjBUDVAk1TSCvZn8U3NWS00i4o=");
