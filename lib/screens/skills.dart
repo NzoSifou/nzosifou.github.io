@@ -136,6 +136,7 @@ class SkillsList extends StatelessWidget {
                                   child: CircularProgressIndicator(
                                     value: skillEntry.value! / 100,
                                     color: Colors.green,
+                                    // ignore: deprecated_member_use Only way to use Material 3 design
                                     year2023: false,
                                   ),
                                 ),
