@@ -385,27 +385,25 @@ class AboutMeScreenState extends State<AboutMeScreen> {
   Widget _buildFrame({required Widget child}) {
     // 10% of the screen height
     final paddingHeight = MediaQuery.of(context).size.height * 0.10;
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: paddingHeight,
-          horizontal: paddingHeight,
-        ),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(64)),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(width: 5, color: Colors.white),
-                color: Colors.white38,
-                borderRadius: const BorderRadius.all(Radius.circular(64)),
-              ),
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  child: child,
-                ),
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: paddingHeight,
+        horizontal: paddingHeight,
+      ),
+      child: ClipRRect(
+        borderRadius: const BorderRadius.all(Radius.circular(64)),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(width: 5, color: Colors.white),
+              color: Colors.white38,
+              borderRadius: const BorderRadius.all(Radius.circular(64)),
+            ),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: child,
               ),
             ),
           ),

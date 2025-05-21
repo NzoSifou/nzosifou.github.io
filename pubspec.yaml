@@ -90,9 +90,16 @@ flutter:
     - assets/minecraft/deepslate_diamond_ore.png
     - assets/minecraft/deepslate_emerald_ore.png
     - assets/minecraft/bedrock.png
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+
+    # Projects
+    - assets/projects/forgather.jpg
+    - assets/projects/forgather_2.jpg
+    - assets/projects/neogate.jpg
+    - assets/projects/neogate_2.jpg
+    - assets/projects/orienteering.jpg
+    - assets/projects/orienteering_2.jpg
+    - assets/projects/plant_whisperer.jpg
+    - assets/projects/plant_whisperer_2.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
