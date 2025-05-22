@@ -66,7 +66,7 @@ class PortfolioScreenState extends State<PortfolioScreen> {
             selectedIndex: _selectedIndex,
             onDestinationSelected: (int index) async {
               if (index == 3) {
-                const url = 'assets/CV_Enzo_MONCHANIN.pdf';
+                const url = 'https://www.dropbox.com/scl/fi/8irpvqj0h9siafbgkfpuu/CV_Enzo_MONCHANIN.pdf?rlkey=ksvrsu2rcquwln9pqrowfvl1s&st=ydxipjrc&dl=0';
                 final uri = Uri.parse(url);
                 if (!await launchUrl(uri)) {
                   throw Exception('Impossible de lancer $uri');
