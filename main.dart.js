@@ -68099,7 +68099,7 @@ O4(a){var s=0,r=A.O(t.H),q=this,p,o
 var $async$$1=A.K(function(b,c){if(b===1)return A.L(c,r)
 while(true)switch(s){case 0:s=a===3?2:4
 break
-case 2:p=A.hh("assets/CV_Enzo_MONCHANIN.pdf",0,null)
+case 2:p=A.hh("https://www.dropbox.com/scl/fi/8irpvqj0h9siafbgkfpuu/CV_Enzo_MONCHANIN.pdf?rlkey=ksvrsu2rcquwln9pqrowfvl1s&st=ydxipjrc&dl=0",0,null)
 s=5
 return A.T(A.ai8(p),$async$$1)
 case 5:if(!c)throw A.f(A.cA("Impossible de lancer "+p.i(0)))
